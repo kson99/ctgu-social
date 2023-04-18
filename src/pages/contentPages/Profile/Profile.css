@@ -1,0 +1,143 @@
+.Profile {
+    padding-top: 60px;
+    width: 100%;
+    max-width: 1100px;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    height: fit-content;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Profile .ProfInfo {
+    width: 80%;
+    height: 340px;
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profile .ProfInfo .Avatarp {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.Profile .ProfInfo .Avatarp div {
+    margin-top: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background-color: cornflowerblue;
+}
+
+.Profile .ProfInfo .Avatarp .ProPic {
+    margin-top: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.Profile .ProfInfo .Avatarp .ProPic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 75px;
+}
+
+.Profile .ProfInfo .MyInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.Profile .ProfInfo .MyInfo .Interactions {
+    display: flex;
+    flex-direction: row;
+}
+
+.Profile .ProfInfo .MyInfo .Interactions div {
+    font-size: 28px;
+    padding-right: 20px;
+}
+
+.Profile .ProfInfo .MyInfo .Interactions button {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.Profile .ProfInfo .MyInfo .Interactions button:last-child {
+    margin-left: 20px;
+}
+
+.Profile .ProfInfo .MyInfo .Interactions button:hover {
+    cursor: pointer;
+}
+
+.Profile .ProfInfo .MyInfo .Stats {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.Profile .ProfInfo .MyInfo .Stats div {
+    display: flex;
+    flex-direction: row;
+}
+
+.Profile .ProfInfo .MyInfo .Stats div div:first-child {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.Profile .ProfInfo .MyInfo .Stats div:not(:last-child) {
+    padding-right: 20px;
+}
+
+.Profile .Seperator {
+    height: 1px;
+    width: 80%;
+    background-color: grey;
+}
+
+.Profile .Posts {
+    width: 83%;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.Profile .NoPosts p {
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Profile .Posts .Image {
+    width: 90%;
+    justify-self: center;
+    background-color: black;
+    margin-bottom: 30px;
+    height: 320px;
+}
+
+.Profile .Posts .Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.2s;
+}
+
+.Profile .Posts .Image img:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

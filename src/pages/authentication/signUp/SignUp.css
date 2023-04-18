@@ -1,0 +1,47 @@
+.SignUp {
+    width: 100%;
+    height: 100vh;
+    background: url(../../../images/CTGU1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignUp::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+}
+
+.SignUp .Form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    z-index: 1;
+}
+
+.SignUp .Form input {
+    width: 200px;
+    padding: 7px;
+    margin-bottom: 15px;
+}
+
+.SignUp .Form button {
+    border-radius: 5px;
+    padding: 7px 20px;
+}
+
+.SignUp .Form button:hover {
+    background-color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+}

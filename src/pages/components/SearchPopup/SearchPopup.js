@@ -37,32 +37,33 @@ function SearchPopup(props) {
           </div>
           <div className="Tile">
             Searching for {props.search}
-            {searchUsers.map((val, index) => {
-              return (
-                <div key={index}>
-                  {val.username !== localStorage.getItem("username") ? (
-                    <div className="User" onClick={() => goToProfile(val)}>
-                      {val.profilePicture === null ? (
-                        <div className="Avatar"></div>
-                      ) : (
-                        <div key={index} className="ProPic">
-                          <Image
-                            cloudName="kson"
-                            publicId={val.profilePicture}
-                          />
+            {searchUsers.length > 0 &&
+              searchUsers.map((val, index) => {
+                return (
+                  <div key={index}>
+                    {val.username !== localStorage.getItem("username") ? (
+                      <div className="User" onClick={() => goToProfile(val)}>
+                        {val.profilePicture === null ? (
+                          <div className="Avatar"></div>
+                        ) : (
+                          <div key={index} className="ProPic">
+                            <Image
+                              cloudName="kson"
+                              publicId={val.profilePicture}
+                            />
+                          </div>
+                        )}
+                        <div className="Details">
+                          <div className="Name"> {val.username} </div>
+                          <div className="College"> {val.college} </div>
                         </div>
-                      )}
-                      <div className="Details">
-                        <div className="Name"> {val.username} </div>
-                        <div className="College"> {val.college} </div>
                       </div>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              );
-            })}
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

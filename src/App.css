@@ -2,8 +2,12 @@
   text-align: center;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   background-color: rgba(0, 128, 0, 0.1);
+  /* background-color: #202020; */
 }

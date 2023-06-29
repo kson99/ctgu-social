@@ -2,18 +2,16 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import UploadPopup from "../contentPages/Upload/UploadPopup";
-import logo from "../../images/CTGU-logo.png";
+import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import TextsmsOutlinedIcon from "@material-ui/icons/TextsmsOutlined";
-import AddBoxOutlinedIcon from "@material-ui/icons/AddBoxOutlined";
-import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import SearchPopup from "./SearchPopup/SearchPopup";
+import IonIcon from "@reacticons/ionicons";
 
 function NavBar() {
   const [popupTrigger, setPopupTrigger] = useState(false);
   const [searchPopupTrigger, setSearchPopupTrigger] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [selected, setSelected] = useState("");
   const navigate = useNavigate();
 
   ["click", "load"].forEach((event) => {
@@ -26,38 +24,17 @@ function NavBar() {
     const pathname = window.location.pathname;
 
     if (pathname === "/") {
-      document.getElementById("Chats").style.color = "green";
-      document.getElementById("Profile").style.color = "green";
-      document.getElementById("Upload").style.color = "green";
-
-      document.getElementById("Home").style.color = "cornflowerblue";
+      setSelected("Home");
     } else if (pathname === "/chats") {
-      document.getElementById("Home").style.color = "green";
-      document.getElementById("Profile").style.color = "green";
-      document.getElementById("Upload").style.color = "green";
-
-      document.getElementById("Chats").style.color = "cornflowerblue";
+      setSelected("Chats");
     } else if (pathname === "/profile") {
-      document.getElementById("Upload").style.color = "green";
-      document.getElementById("Home").style.color = "green";
-      document.getElementById("Chats").style.color = "green";
-
-      document.getElementById("Profile").style.color = "cornflowerblue";
+      setSelected("Profile");
+    } else {
+      setSelected("");
     }
 
     if (popupTrigger) {
-      document.getElementById("Home").style.color = "green";
-      document.getElementById("Profile").style.color = "green";
-      document.getElementById("Chats").style.color = "green";
-
-      document.getElementById("Upload").style.color = "cornflowerblue";
-    }
-
-    if (pathname === "/userProfile") {
-      document.getElementById("Home").style.color = "green";
-      document.getElementById("Profile").style.color = "green";
-      document.getElementById("Chats").style.color = "green";
-      document.getElementById("Upload").style.color = "green";
+      setSelected("Upload");
     }
   };
 
@@ -65,18 +42,28 @@ function NavBar() {
     <div className="NavBar">
       <div className="max-width">
         <Link to="/">
-          <img src={logo} alt="" /> Social
+          <img src={logo} alt="" />
+          &nbsp;Social
         </Link>
 
         <div className="SearchBar">
-          <SearchIcon id="SearchIcon" />
+          <IonIcon id="SearchIcon" name="search-outline" />
           <input
             type="text"
             placeholder="Search"
+            id="search-input"
             onChange={(event) => {
               setSearchText(event.target.value);
             }}
             onClick={() => setSearchPopupTrigger(true)}
+          />
+          <IonIcon
+            name="close"
+            id="close"
+            onClick={() => {
+              document.getElementById("search-input").value = "";
+              setSearchText("");
+            }}
           />
         </div>
 
@@ -88,13 +75,22 @@ function NavBar() {
 
         <div className="Tabs">
           <Link to="/">
-            <HomeOutlinedIcon className="Icon" id="Home" />
+            <IonIcon
+              name={selected == "Home" ? "home" : "home-outline"}
+              className="Icon"
+              id="Home"
+            />
           </Link>
           <Link to="/chats">
-            <TextsmsOutlinedIcon className="Icon" id="Chats" />
+            <IonIcon
+              className="Icon"
+              id="Chats"
+              name={selected == "Chats" ? "mail" : "mail-outline"}
+            />
           </Link>
           <Link>
-            <AddBoxOutlinedIcon
+            <IonIcon
+              name={selected == "Upload" ? "duplicate" : "duplicate-outline"}
               className="Icon"
               id="Upload"
               onClick={() => {
@@ -108,7 +104,11 @@ function NavBar() {
             />
           </Link>
           <Link to="/profile">
-            <AccountCircleOutlinedIcon className="Icon" id="Profile" />
+            <IonIcon
+              name={selected == "Profile" ? "person" : "person-outline"}
+              className="Icon"
+              id="Profile"
+            />
           </Link>
         </div>
 

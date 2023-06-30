@@ -36,7 +36,10 @@ function EditProfile(props) {
         <h3>Change Profile Picture</h3>
 
         <div className="Seperator"></div>
-        <p style={{ color: "green" }} onClick={() => inputFile.current.click()}>
+        <p
+          style={{ color: "cornflowerblue" }}
+          onClick={() => inputFile.current.click()}
+        >
           Upload Profile Picture
         </p>
 

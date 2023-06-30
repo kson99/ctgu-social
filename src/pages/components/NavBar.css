@@ -22,7 +22,6 @@
 }
 
 .NavBar a {
-  /* font-size: 23px; */
   display: flex;
   flex-direction: row;
   margin: 10px;

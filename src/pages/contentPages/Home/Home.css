@@ -59,7 +59,7 @@
   height: 40px;
   width: 40px;
   border-radius: 20px;
-  background-color: green;
+  background-color: cornflowerblue;
   margin-left: 10px;
 }
 
@@ -67,7 +67,7 @@
   height: 40px;
   width: 40px;
   border-radius: 20px;
-  background-color: green;
+  background-color: cornflowerblue;
   margin-left: 10px;
 }
 
@@ -105,12 +105,13 @@
   align-items: center;
 }
 
-.Home .Posts .Post .PostInfo .Reactions #LikeButton {
+.Home .Posts .Post .PostInfo .Reactions .LikeButton {
   padding: 10px;
   font-size: 30px;
+  color: #2b2b2b;
 }
 
-.Home .Posts .Post .PostInfo .Reactions #LikeButton:hover {
+.Home .Posts .Post .PostInfo .Reactions .LikeButton:hover {
   color: gray;
 }
 
@@ -191,7 +192,7 @@
 .Home .Others .Users .Tile .User .Avatar {
   width: 40px;
   height: 40px;
-  background-color: green;
+  background-color: cornflowerblue;
   border-radius: 20px;
   margin-left: 15px;
 }
@@ -199,7 +200,7 @@
 .Home .Others .Users .Tile .User .ProPic {
   width: 40px;
   height: 40px;
-  background-color: green;
+  background-color: cornflowerblue;
   border-radius: 20px;
   margin-left: 15px;
 }

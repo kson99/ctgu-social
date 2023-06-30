@@ -4,6 +4,7 @@ import Axios from "axios";
 import "./Home.css";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { useNavigate } from "react-router-dom";
+import IonIcon from "@reacticons/ionicons";
 
 function Home() {
   const [uploads, setUploads] = useState([]);
@@ -90,8 +91,9 @@ function Home() {
                   <div className="PostInfo">
                     <div className="Reactions">
                       <div className="ReactionButtons">
-                        <FavoriteBorderIcon
-                          id="LikeButton"
+                        <IonIcon
+                          name="heart-outline"
+                          className="LikeButton"
                           onClick={() => likePost(val.id)}
                         />
                       </div>

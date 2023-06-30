@@ -79,6 +79,7 @@ function NavBar() {
               name={selected == "Home" ? "home" : "home-outline"}
               className="Icon"
               id="Home"
+              style={{ color: selected == "Home" ? "cornflowerblue" : "green" }}
             />
           </Link>
           <Link to="/chats">
@@ -86,6 +87,9 @@ function NavBar() {
               className="Icon"
               id="Chats"
               name={selected == "Chats" ? "mail" : "mail-outline"}
+              style={{
+                color: selected == "Chats" ? "cornflowerblue" : "green",
+              }}
             />
           </Link>
           <Link>
@@ -101,6 +105,9 @@ function NavBar() {
                   setPopupTrigger(true);
                 }
               }}
+              style={{
+                color: selected == "Upload" ? "cornflowerblue" : "green",
+              }}
             />
           </Link>
           <Link to="/profile">
@@ -108,6 +115,9 @@ function NavBar() {
               name={selected == "Profile" ? "person" : "person-outline"}
               className="Icon"
               id="Profile"
+              style={{
+                color: selected == "Profile" ? "cornflowerblue" : "green",
+              }}
             />
           </Link>
         </div>

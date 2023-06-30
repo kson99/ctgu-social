@@ -21,12 +21,19 @@
 }
 
 .Search .SearchResults .Close {
-  position: fixed;
-  background-color: green;
+  position: absolute;
+  background-color: red;
+  top: -10px;
+  right: -5px;
+  z-index: 5;
   color: white;
-  padding: 0 5px;
-  border-radius: 20px;
-  right: 42.5%;
+  border-radius: 100%;
+  text-align: center;
+}
+
+.Search .SearchResults .Close .icon {
+  font-size: 20px;
+  padding: 2px;
 }
 
 .Search .SearchResults .Close:hover {
@@ -66,7 +73,7 @@
 .Search .SearchResults .Users .Tile .User .Avatar {
   width: 40px;
   height: 40px;
-  background-color: green;
+  background-color: cornflowerblue;
   border-radius: 20px;
   margin-left: 15px;
 }
@@ -74,7 +81,7 @@
 .Search .SearchResults .Users .Tile .User .ProPic {
   width: 40px;
   height: 40px;
-  background-color: green;
+  background-color: cornflowerblue;
   border-radius: 20px;
   margin-left: 15px;
 }

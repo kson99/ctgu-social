@@ -42,6 +42,6 @@
 }
 
 .SignUp .Form button:hover {
-  background-color: green;
-  border: 2px solid green;
+  background-color: cornflowerblue;
+  border: 2px solid cornflowerblue;
 }

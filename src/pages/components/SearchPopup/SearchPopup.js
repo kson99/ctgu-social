@@ -3,6 +3,7 @@ import "./SearchPopup.css";
 import Axios from "axios";
 import { Image } from "cloudinary-react";
 import { useNavigate } from "react-router-dom";
+import IonIcon from "@reacticons/ionicons";
 
 function SearchPopup(props) {
   const [searchUsers, setSearchUsers] = useState([]);
@@ -31,12 +32,12 @@ function SearchPopup(props) {
   return props.trigger ? (
     <div className="Search">
       <div className="SearchResults">
+        <div className="Close" onClick={() => props.setTrigger(false)}>
+          <IonIcon name="close" className="icon" />
+        </div>
         <div className="Users">
-          <div className="Close" onClick={() => props.setTrigger(false)}>
-            x
-          </div>
           <div className="Tile">
-            Searching for {props.search}
+            Searching for: <b>{props.search}</b>
             {searchUsers.length > 0 &&
               searchUsers.map((val, index) => {
                 return (

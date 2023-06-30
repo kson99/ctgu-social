@@ -19,9 +19,9 @@
 
 .Popup .PopupInner p {
   position: absolute;
-  top: -35px;
-  right: -25px;
-  background-color: green;
+  top: -15px;
+  right: -15px;
+  background-color: red;
   color: white;
   padding: 3px 8px;
   border-radius: 20px;
@@ -65,7 +65,7 @@
 
 .Popup .PopupInner .Upload .Form button:hover {
   cursor: pointer;
-  background-color: green;
-  border: 2px solid green;
+  background-color: cornflowerblue;
+  border: 2px solid cornflowerblue;
   border-radius: 5px;
 }

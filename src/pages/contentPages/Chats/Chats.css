@@ -56,7 +56,7 @@
 
 .Tile.activeTile {
   background-color: rgba(128, 128, 128, 0.1);
-  color: green;
+  color: cornflowerblue;
   font-weight: bold;
 }
 
@@ -72,7 +72,7 @@
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: green;
+  background-color: cornflowerblue;
 }
 
 .ProPic {
@@ -173,7 +173,7 @@
   border: none;
   font-size: 18px;
   margin-right: 10px;
-  color: green;
+  color: cornflowerblue;
 }
 
 .Chats .ChatArea .Messaging .SendingMessage button:hover {

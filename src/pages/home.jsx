@@ -54,7 +54,7 @@ const Home = () => {
                 <p>create Ad</p>
               </div>
 
-              <img src="./ad-sec.jpeg" alt="" className="rounded-[5px]" />
+              <img src="/ad-sec.jpeg" alt="" className="rounded-[5px]" />
             </div>
           </div>
         </div>

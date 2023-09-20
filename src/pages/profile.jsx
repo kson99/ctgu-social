@@ -235,8 +235,9 @@ const Profile = () => {
               )}
             </div>
 
+            {/* Users I'm following */}
             {user?.username === person?.username && showFollowing && (
-              <div className="md:sticky flex flex-col rounded-[10px] p-[15px] bg-primary gap-y-[20px]">
+              <div className="md:sticky md:top-[420px] flex flex-col rounded-[10px] p-[15px] bg-primary gap-y-[20px]">
                 <div className="flex flex-row justify-between items-center ">
                   <p>Following</p>
                 </div>

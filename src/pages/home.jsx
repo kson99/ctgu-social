@@ -47,7 +47,7 @@ const Home = () => {
           </div>
 
           {/* Others */}
-          <div className="hidden lg:block others flex-[0.3]">
+          <div className="hidden lg:flex flex-col gap-[30px] others flex-[0.3] ">
             <div className="bg-primary p-[15px] rounded-[10px] flex flex-col gap-y-[20px]">
               <div className="flex flex-row justify-between items-center">
                 <h2>Sponsored</h2>

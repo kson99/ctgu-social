@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 
 export const appContext = createContext();
-export const url = "https://perfect-cuff-links-lamb.cyclic.cloud/ctgu-social";
+export const url = "https://projectsmegaserver.onrender.com/ctgu-social";
 // export const url = "http://192.168.8.101:3001/ctgu-social";
 
 const Context = ({ children, token, setToken }) => {

@@ -12,41 +12,45 @@ const WhatsOnYourMindCard = () => {
   const [caption, setCaption] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const upload = async () => {
-    setLoading(true);
+  const upload = async (e) => {
+    e.preventDefault();
 
-    if (image.length === 0) {
-      const filename = "";
+    if (caption.trim() !== "") {
+      setLoading(true);
 
-      await axios
-        .post(url + "/upload", {
-          caption: caption,
-          image: filename,
-          username: user.username,
-        })
-        .then(() => {
-          window.location.reload();
-        });
-    } else {
-      const formData = new FormData();
-      formData.append("file", image);
-      formData.append("upload_preset", "iat5gtdf");
+      if (image.length === 0) {
+        const filename = "";
 
-      await axios
-        .post("https://api.cloudinary.com/v1_1/kson/image/upload", formData)
-        .then(async (response) => {
-          const filename = response.data.public_id;
+        await axios
+          .post(url + "/upload", {
+            caption: caption,
+            image: filename,
+            username: user.username,
+          })
+          .then(() => {
+            window.location.reload();
+          });
+      } else {
+        const formData = new FormData();
+        formData.append("file", image);
+        formData.append("upload_preset", "iat5gtdf");
 
-          await axios
-            .post(url + "/upload", {
-              caption: caption,
-              image: filename,
-              username: user.username,
-            })
-            .then(() => {
-              setReflesh(reflesh + 1);
-            });
-        });
+        await axios
+          .post("https://api.cloudinary.com/v1_1/kson/image/upload", formData)
+          .then(async (response) => {
+            const filename = response.data.public_id;
+
+            await axios
+              .post(url + "/upload", {
+                caption: caption,
+                image: filename,
+                username: user.username,
+              })
+              .then(() => {
+                setReflesh(reflesh + 1);
+              });
+          });
+      }
     }
 
     setCaption("");
@@ -55,7 +59,10 @@ const WhatsOnYourMindCard = () => {
   };
 
   return (
-    <div className="w-full rounded-[10px] px-[15px] py-[20px] bg-primary flex flex-col gap-y-[20px]">
+    <form
+      onSubmit={upload}
+      className="w-full rounded-[10px] px-[15px] py-[20px] bg-primary flex flex-col gap-y-[20px]"
+    >
       <div className="flex flex-row gap-x-[20px]">
         <AvatarCard image={user.profilePicture} size={50} />
 
@@ -68,6 +75,7 @@ const WhatsOnYourMindCard = () => {
             placeholder="Whats on your mind..."
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
+            required
           />
         </div>
       </div>
@@ -107,13 +115,13 @@ const WhatsOnYourMindCard = () => {
         </label>
 
         <button
+          type="submit"
           className="px-[20px] py-[5px] bg-tertial rounded-[25px]"
-          onClick={upload}
         >
           {loading ? <BeatLoader color="white" /> : "Post"}
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

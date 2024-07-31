@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-primary relative">
+    <div className="bg-primary sticky inset-0 z-[9999999]">
       <div className="max-width">
         {token != "" ? (
           <div className="nav h-[80px] flex flex-row justify-between items-center">

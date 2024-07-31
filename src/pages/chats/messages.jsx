@@ -100,12 +100,12 @@ const Messages = ({ chatActive, chatProf, setChatActive, setActiveIndex }) => {
                 messages.map((message) => (
                   <div key={message.id}>
                     {message.sender === chatProf.username && (
-                      <div className="p-[10px] w-fit max-w-[80%] bg-primary rounded-[15px] rounded-tl-none mt-[15px]">
+                      <div className="p-[10px] w-fit max-w-[80%] bg-primary rounded-[15px] rounded-tl-none mt-[15px] whitespace-pre-wrap">
                         {message.message}
                       </div>
                     )}
                     {message.receiver === chatProf.username && (
-                      <div className="p-[10px] w-fit max-w-[80%] float-right bg-blue-600 rounded-[15px] rounded-tr-none mt-[15px]">
+                      <div className="p-[10px] w-fit max-w-[80%] float-right bg-blue-600 rounded-[15px] rounded-tr-none mt-[15px] whitespace-pre-wrap">
                         {message.message}
                       </div>
                     )}
